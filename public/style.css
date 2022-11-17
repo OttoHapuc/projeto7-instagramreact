@@ -95,9 +95,10 @@ ion-icon {
   overflow: auto;
   margin-bottom: 24px;
   padding-left: 5px;
+}
+.posicaoDaSetinha{
   position: relative;
 }
-
 .setinha {
   color: #ffffff;
   position: absolute;
