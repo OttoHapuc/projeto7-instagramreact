@@ -68,6 +68,10 @@ export default function Posts() {
     )
 }
 
+function likelike(){
+    alert("aoba, ta funcionando")
+}
+
 function ApresentaPosts(props) {
     console.log(props)
     return(
@@ -79,7 +83,7 @@ function ApresentaPosts(props) {
                     </div>
                     <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                 </header>
-                <img className="img-puclicacao" src={props.publication.imagem} alt="" />
+                <img onClick={()=>likelike()} className="img-puclicacao" src={props.publication.imagem} alt="" />
                 <footer>
                     <div className="reacoes flex-box just-be alig">
                         <div>

@@ -203,6 +203,10 @@ ion-icon {
 .agregado .cabeca p:nth-child(2) {
   color: #8e8e8e;
 }
+.agregado .cabeca ion-icon{
+  font-size: 13px;
+  margin-left: 10px;
+}
 .agregado .borda- {
   width: 56px;
   height: 56px;
@@ -234,6 +238,7 @@ ion-icon {
 .sugestoes .perfil{
   width: 100%;
 }
+
 
 .sugestoes .perf p:nth-child(2) {
   color: #8e8e8e;
