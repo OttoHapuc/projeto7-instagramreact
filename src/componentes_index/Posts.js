@@ -1,3 +1,5 @@
+import React, { useState } from "react"
+
 export default function Posts() {
     const publicacoes = [
         {
@@ -6,7 +8,7 @@ export default function Posts() {
             publication: {
                 imagem: "./images/gato-telefone 1.jpg",
                 curtidoPor: ["repondeai"],
-                qtdCurtidas:"101.523"
+                qtdCurtidas:101.523
             }
         },
         {
@@ -16,15 +18,22 @@ export default function Posts() {
                 imagem:"./images/dog 1.jpg",
                 imagemCurtida:"./images/respondeai 1.jpg",
                 curtidoPor:"respondeai",
-                qtdCurtidas:"101.503"
+                qtdCurtidas:101.503
             }
         }
     ]
+    const [iconCheio, setIconCheio] = useState(<ion-icon name="heart-outline"></ion-icon>)
+
+    function like(){
+        setIconCheio(<ion-icon class="color-red" name="heart"></ion-icon>)
+    }
     return (
         <section className="publicacoes">
 
             {publicacoes.map((publicacao)=> 
             <ApresentaPosts 
+            lik = {()=>like()}
+            icon = {iconCheio}
             key={publicacao.nome}
             imagem={publicacao.imagem} 
             nome={publicacao.nome}
@@ -49,7 +58,7 @@ export default function Posts() {
                 <footer>
                     <div className="reacoes flex-box just-be alig">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            {iconCheio}
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
@@ -68,9 +77,6 @@ export default function Posts() {
     )
 }
 
-function likelike(){
-    alert("aoba, ta funcionando")
-}
 
 function ApresentaPosts(props) {
     console.log(props)
@@ -83,11 +89,11 @@ function ApresentaPosts(props) {
                     </div>
                     <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                 </header>
-                <img onClick={()=>likelike()} className="img-puclicacao" src={props.publication.imagem} alt="" />
+                <img onClick={props.lik} className="img-puclicacao" src={props.publication.imagem} alt="" />
                 <footer>
                     <div className="reacoes flex-box just-be alig">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            {props.icon}
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>

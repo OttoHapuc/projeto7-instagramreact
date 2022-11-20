@@ -321,3 +321,11 @@ ion-icon {
     z-index: 3;
   }
 }
+
+.invisivel{
+  display: none;
+}
+.color-red{
+  color: red;
+  visibility: visible;
+}
