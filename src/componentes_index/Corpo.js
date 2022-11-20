@@ -3,8 +3,8 @@ import Posts from "./Posts";
 import SideBar from "./SideBar"
 export default function Corpo() {
     return (
-        <main class="flex-box row just-be">
-            <div class="main">
+        <main className="flex-box row just-be">
+            <div className="main">
                 <Stories />
                 <Posts />
             </div>

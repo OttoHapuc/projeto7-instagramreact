@@ -1,52 +1,37 @@
 export default function Stories() {
+    const osStories = [
+        { nome: "9gag", imagem: "./images/9gag 1.jpg" },
+        { nome: "meowed", imagem: "./images/meowed 1.jpg" },
+        { nome: "barked", imagem: "./images/barked 1.jpg" },
+        { nome: "nathanwpyle...", imagem: "./images/nathanwpylestrangeplanet 1.jpg" },
+        { nome: "wawawiwac...", imagem: "./images/wawawiwacomicsa 1.jpg" },
+        { nome: "respondeai", imagem: "./images/respondeai 1.jpg" },
+        { nome: "meowed2", imagem: "./images/meowed 1.jpg" },
+        { nome: "barked2", imagem: "./images/barked 1.jpg" },
+        { nome: "nathanwpyl2...", imagem: "./images/nathanwpylestrangeplanet 1.jpg" }
+    ]
+
     return (
-        <div class="posicaoDaSetinha">
-        
-        <section class="historias flex-box alig">
-            <div class="setinha">
-                <ion-icon name="chevron-forward-circle"></ion-icon>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/9gag 1.jpg" />
-                <p>9gag</p>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/meowed 1.jpg" />
-                <p>meowed</p>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/barked 1.jpg" />
-                <p>barked</p>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/nathanwpylestrangeplanet 1.jpg" />
-                <p>nathanwpyle...</p>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/wawawiwacomicsa 1.jpg" />
-                <p>wawawiwac...</p>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/respondeai 1.jpg" />
-                <p>respondeai</p>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/filomoderna 1.jpg" />
-                <p>filomoderna</p>
-            </div>
-            <div class="historia">
-                <img class="borda" src="./images/stores.jpg" alt="" />
-                <img class="image" src="./images/memeriagourmet 1.jpg" />
-                <p>memeriago.</p>
-            </div>
-        </section>
+        <div className="posicaoDaSetinha">
+
+            <section className="historias flex-box alig">
+                <div className="setinha">
+                    <ion-icon name="chevron-forward-circle"></ion-icon>
+                </div>
+
+                {osStories.map((storie)=> <ApresentaStorie key={storie.nome} nome={storie.nome} imagem={storie.imagem}/>)}
+
+            </section>
+        </div>
+    )
+}
+
+function ApresentaStorie(props) {
+    return (
+        <div className="historia">
+            <img className="borda" src="./images/stores.jpg" alt="" />
+            <img className="image" src={props.imagem} />
+            <p>{props.nome}</p>
         </div>
     )
 }

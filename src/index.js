@@ -9,7 +9,7 @@ function App() {
 
             <Corpo />
             
-            <footer class="bar-phone flex-box just-be alig">
+            <footer className="bar-phone flex-box just-be alig">
                 <ion-icon name="home"></ion-icon>
                 <ion-icon name="search-outline"></ion-icon>
                 <ion-icon name="add-circle-outline"></ion-icon>
