@@ -129,7 +129,7 @@ function ApresentaPosts(props) {
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
-                        <ion-icon data-test="salve-post" className={props.negro} onClick={props.salv} name={props.iconSalva}></ion-icon>
+                        <ion-icon data-test="save-post" className={props.negro} onClick={props.salv} name={props.iconSalva}></ion-icon>
                     </div>
                     <div className="quem-curtiu flex-box alig">
                         <img src={props.publication.imagemCurtida} alt="" />
