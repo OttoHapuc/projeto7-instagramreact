@@ -39,7 +39,7 @@ export default function Posts() {
     }
     function salva() {
         const eu = "bookmark-outline";
-
+        somavid()
         if (eu === iconSalva) {
             setIconSalva("bookmark")
         } else {
@@ -48,12 +48,13 @@ export default function Posts() {
     }
 
     function like() {
+        
         setIconCheio("heart")
         setIconVazio("color-red")
     }
     function likee() {
         const eu = "heart-outline"
-
+       
         if (eu == iconCheio) {
             setIconCheio("heart")
             setIconVazio("color-red")
@@ -98,7 +99,7 @@ export default function Posts() {
                 ></video>
                 <footer>
                     <div className="reacoes flex-box just-be alig">
-                        <div onClick={()=>somavid()}>
+                        <div>
                             <ion-icon data-test="like-post" onClick={()=>likee()} class={iconVazio} name={iconCheio}></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
