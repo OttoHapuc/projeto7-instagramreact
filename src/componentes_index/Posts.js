@@ -22,17 +22,49 @@ export default function Posts() {
             }
         }
     ]
-    const [iconCheio, setIconCheio] = useState(<ion-icon name="heart-outline"></ion-icon>)
+    const [iconCheio, setIconCheio] = useState("heart-outline");
+    const [iconVazio, setIconVazio] = useState("color-black");
+    const [iconSalva, setIconSalva] = useState("bookmark-outline");
+    const negro = "color--black"
+
+    function salva(){
+        const eu = "bookmark-outline";
+
+        if(eu === iconSalva){
+            setIconSalva("bookmark")
+        }else{
+            setIconSalva("bookmark-outline")
+        }
+    }
 
     function like(){
-        setIconCheio(<ion-icon class="color-red" name="heart"></ion-icon>)
+        setIconCheio("heart")
+        setIconVazio("color-red")
+    }
+    function likee(){
+        alert("tamo aqui")
+        const eu = "heart-outline"
+
+        if(eu == iconCheio){
+        setIconCheio("heart")
+        setIconVazio("color-red")
+        }
+        else{
+            setIconCheio("heart-outline")
+            setIconVazio("color-black")
+        }
     }
     return (
         <section className="publicacoes">
 
             {publicacoes.map((publicacao)=> 
             <ApresentaPosts 
+            negro = {negro}
+            iconSalva = {iconSalva}
+            salv = {()=>salva()}
+            likk = {()=>likee()}
             lik = {()=>like()}
+            iconVazio = {iconVazio}
             icon = {iconCheio}
             key={publicacao.nome}
             imagem={publicacao.imagem} 
@@ -40,7 +72,7 @@ export default function Posts() {
             publication={publicacao.publication}
             />)}
 
-            <div className="publicacao">
+            <div data-test="post" className="publicacao">
                 <header className="flex-box just-be alig">
                     <div className="publicador flex-box alig">
                         <img src="./images/9gag 1.jpg" />
@@ -81,7 +113,7 @@ export default function Posts() {
 function ApresentaPosts(props) {
     console.log(props)
     return(
-        <div className="publicacao">
+        <div data-test="post" className="publicacao">
                 <header className="flex-box just-be alig">
                     <div className="publicador flex-box alig">
                         <img src={props.imagem} />
@@ -89,21 +121,21 @@ function ApresentaPosts(props) {
                     </div>
                     <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                 </header>
-                <img onClick={props.lik} className="img-puclicacao" src={props.publication.imagem} alt="" />
+                <img data-test="post-image" onClick={props.lik} className="img-puclicacao" src={props.publication.imagem} alt="" />
                 <footer>
                     <div className="reacoes flex-box just-be alig">
                         <div>
-                            {props.icon}
+                            <ion-icon data-test="like-post" onClick={props.likk} class={props.iconVazio} name={props.icon}></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon data-test="salve-post" className={props.negro} onClick={props.salv} name={props.iconSalva}></ion-icon>
                     </div>
                     <div className="quem-curtiu flex-box alig">
                         <img src={props.publication.imagemCurtida} alt="" />
                         <p>
                             Curtido por <strong>{props.publication.curtidoPor}</strong> e
-                            <strong>outras {props.publication.qtdCurtidas} pessoas</strong>
+                            <strong data-test="likes-number">outras {props.publication.qtdCurtidas} pessoas</strong>
                         </p>
                     </div>
                 </footer>
